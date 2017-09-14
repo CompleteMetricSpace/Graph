@@ -32,6 +32,14 @@ public class DrawGraph<T extends Comparable<T>, L extends Comparable<L>> extends
     Function<GraphNode<T>, Color> colorFunction;
     int radius = 10;
 
+    /**
+     * Draws an directed/undirected Graph with given location hashtable
+     * 
+     * (Created JFrame instance)
+     * 
+     * @param graph a graph (directed or undirected)
+     * @param coord a location hashtable
+     */
     public DrawGraph(Graph<T, L> graph, Hashtable<GraphNode<T>, Coord> coord)
     {
 	super();

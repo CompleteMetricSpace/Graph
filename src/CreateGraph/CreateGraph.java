@@ -19,8 +19,20 @@ import Interfaces.UndirectedGraph;
 import ListImplementation.LDGraph;
 import ListImplementation.LUGraph;
 
+/**
+ * 
+ * @author KhAKhA
+ *
+ * Class for creating some graphs
+ */
 public class CreateGraph
 {
+    /**
+     * Creates some directed graph grid of size n \times m and with some nodes removed
+     * @param m 
+     * @param n
+     * @return
+     */
     public static Pair<LDGraph<Coord, Integer>, Hashtable<GraphNode<Coord>, Coord>> createGraph(
 	    int m, int n)
     {
@@ -83,6 +95,12 @@ public class CreateGraph
 	return new Pair<>(graph, coord);
     }
 
+    /**
+     * Creates some undirected graph grid of size n \times m and with some nodes removed
+     * @param m 
+     * @param n
+     * @return
+     */
     public static Pair<LUGraph<Coord, Integer>, Hashtable<GraphNode<Coord>, Coord>> createUndirectedGraph(
 	    int m, int n)
     {
@@ -137,6 +155,7 @@ public class CreateGraph
 	return new Pair<>(graph, coord);
     }
 
+    
     public static <T extends Comparable<T>, L extends Comparable<L>> Graph<T, L> createGraph(
 	    List<GraphEdge<T, L>>
 	    list)
@@ -165,6 +184,15 @@ public class CreateGraph
 	return path;
     }
 
+    /**
+     * Creates some random undirected graph with m random located nodes and n random edges 
+     * 
+     * Nodes are placed in the square 1000 \times 1000 randomly
+     * 
+     * @param m
+     * @param n
+     * @return the pair (G, H) where G is the undirected Graph and H is the location hashtable 
+     */
     public static Pair<UndirectedGraph<Integer, Integer>, Hashtable<GraphNode<Integer>, Coord>> createRandomUndirectedGraph(
 	    int m, int n)
     {
@@ -196,6 +224,17 @@ public class CreateGraph
 	return new Pair<>(graph, coord);
     }
     
+    /**
+     * Balance a graph using the force-approach:
+     * 
+     * Nodes that are adjacent are attracted towards each other
+     * Nodes that are not adjacent are repelled
+     *  
+     * @param graph a graph
+     * @param table a location hashtable
+     * @param M number of times force is applied to the nodes
+     * @return a new location hashtable that has (hopefully) better locations for nodes
+     */
     public static <T extends Comparable<T>, L extends Comparable<L>> Hashtable<GraphNode<T>, Coord> forceBalance(UndirectedGraph<T, L> graph, Hashtable<GraphNode<L>, Coord> table, int M)
     {
 	List<GraphNode<T>> nodeList = graph.getVertices();

@@ -14,6 +14,14 @@ import Interfaces.GraphEdge;
 import Interfaces.GraphNode;
 import Interfaces.UndirectedGraph;
 
+/**
+ * An undirected graph implementation using adjacency list
+ * 
+ * @author KhAKhA
+ *
+ * @param <T> node parameter (identifier). Has to be comparable for internal efficiency
+ * @param <L> edge value (i.e. Integer or Double)
+ */
 public class LUGraph<T extends Comparable<T>, L extends Comparable<L>> implements
 	UndirectedGraph<T, L>
 {
