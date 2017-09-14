@@ -37,10 +37,10 @@ public class Main
 {
     public static void main(String[] args)
     {
-	Pair<UndirectedGraph<Integer, Integer>, Hashtable<GraphNode<Integer>, Coord>> pair = CreateGraph.createRandomUndirectedGraph(30, 70);
+	Pair<UndirectedGraph<Integer, Integer>, Hashtable<GraphNode<Integer>, Coord>> pair = CreateGraph.createRandomUndirectedGraph(10, 12);
 	UndirectedGraph<Integer, Integer> graph = pair.getFirst();
 	Hashtable<GraphNode<Integer>, Coord> coords = pair.getSecond();
-        coords = CreateGraph.forceBalance(graph, coords, 30);
+        coords = CreateGraph.forceBalance(graph, coords, 20);
 	DrawGraph<Integer, Integer> dg = new DrawGraph<Integer, Integer>(graph, coords);
         dg.setSize(1000,1000);
         dg.setVisible(true);
