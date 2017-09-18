@@ -35,7 +35,7 @@ public class DrawGraph<T extends Comparable<T>, L extends Comparable<L>> extends
     /**
      * Draws an directed/undirected Graph with given location hashtable
      * 
-     * (Created JFrame instance)
+     * (Creates JFrame instance)
      * 
      * @param graph a graph (directed or undirected)
      * @param coord a location hashtable
